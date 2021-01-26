@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../style/materialize.css">
+  <title>Toast assignment</title>
+</head>
+<body>
+
+    <div class="container" id="list-container"></div>
+  
+
+  <script src="../script/jquery.min.js"></script>
+  <script src="../script/materialize.js"></script>
+
+
+    <script>
+       var list = ['Hello Saturday', 'Goodday', 'My array', 'I`m Vincent', 'it`s sunny', 'MTN', 'GLO', 'Greater', 'Tech', 'HTML', 'CSS', 'Javascript', 'PHP', 'Bootsrap', 'Python', 'jumia', 'fullmoon', 'venus',  'Above all is God','Bye for now' ];
+      
+      $(document).ready(function() {
+
+        var list = ['Hello Saturday', 'Goodday', 'My array', 'I`m Vincent', 'it`s sunny', 'MTN', 'GLO', 'Greater', 'Tech', 'HTML', 'CSS', 'Javascript', 'PHP', 'Bootsrap', 'Python', 'jumia', 'fullmoon', 'venus',  'Above all is God','Bye for now' ];
+
+        var index = 0;
+
+        setInterval(toast,2000);
+        var ol = $('<ol>');
+          for (let index = 0; index <list.length; index++) {
+            var liElement = $('<li>');
+            liElement.text(list[index]);
+            ol.append(liElement);
+          }
+
+        function toast() {
+          if(index<list.length){
+
+            M.toast({html: list[index]});
+            index = index+1;
+
+          }
+        
+        }
+        $('#list-container').append(ol);
+ })
+
+ toast();
+      
+    </script>
+
+  
+</body>
+</html>
